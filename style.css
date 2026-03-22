@@ -587,3 +587,33 @@ footer {
   .hero-ctas { flex-direction: column; align-items: center; }
   .section { padding: 3.5rem 1.5rem; }
 }
+
+/* Hide the checkbox itself */
+.nav-check {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; align-items: center; }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* THIS is the magic line — when checkbox is checked, show the nav */
+  .nav-check:checked ~ nav { display: block; }
+
+  nav ul { flex-direction: column; }
+  nav ul li a { padding: 0.6rem 1rem; display: block; }
+  .hero { padding: 5rem 1.5rem 4rem; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .section { padding: 3.5rem 1.5rem; }
+}
