@@ -204,6 +204,7 @@ nav ul li a.active {
   pointer-events: none;
 }
 
+/*Increase size of font*/
 .hero-eyebrow {
   display: inline-block;
   font-size: 0.72rem;
@@ -281,7 +282,7 @@ nav ul li a.active {
 }
 
 .section-label {
-  font-size: 0.7rem;
+  font-size: 1.0rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -616,4 +617,324 @@ footer {
   .hero { padding: 5rem 1.5rem 4rem; }
   .hero-ctas { flex-direction: column; align-items: center; }
   .section { padding: 3.5rem 1.5rem; }
+}
+
+/* =====================================================
+   VIRTUAL BUSINESS CARD — add to bottom of style.css
+   ===================================================== */
+
+/* ── BODY OVERRIDE (dark centered layout) ── */
+.vc-body {
+  background: var(--ink);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.vc-body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 10%, rgba(107,38,200,0.28) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 85%, rgba(78,26,150,0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── WRAPPER ── */
+.vc-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ── EYEBROW ── */
+.vc-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.vc-eyebrow-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4));
+}
+
+.vc-eyebrow-line.right {
+  background: linear-gradient(90deg, rgba(201,168,76,0.4), transparent);
+}
+
+.vc-eyebrow-text {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── CARD ── */
+.vc-card {
+  background: linear-gradient(160deg, #1a1530 0%, rgba(18,16,32,0) 100%),
+              rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  box-shadow: 0 16px 56px rgba(0,0,0,0.45), 0 0 0 1px rgba(107,38,200,0.12);
+  overflow: hidden;
+}
+
+/* ── CARD TOP BAND ── */
+.vc-card-top {
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+  padding: 2.2rem 2rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.vc-card-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, rgba(255,255,255,0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ── LOGO BADGE ── */
+.vc-logo-badge {
+  width: 72px;
+  height: 72px;
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.1rem;
+  position: relative;
+  font-size: 1.8rem;
+}
+
+.vc-logo-badge::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+/* ── NAME & TITLE ── */
+.vc-card-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  position: relative;
+}
+
+.vc-card-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  margin-top: 0.35rem;
+  position: relative;
+}
+
+.vc-gold-pill {
+  display: inline-block;
+  background: rgba(201,168,76,0.18);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.75rem;
+  border-radius: 50px;
+  margin-top: 0.7rem;
+  position: relative;
+}
+
+/* ── CARD BODY ── */
+.vc-card-body {
+  padding: 0 2rem 2rem;
+  margin-top: -1.4rem;
+}
+
+/* ── CONTACT ROWS ── */
+.vc-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.8rem;
+}
+
+.vc-info-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.vc-info-row:hover {
+  background: rgba(107,38,200,0.15);
+  border-color: rgba(107,38,200,0.35);
+  transform: translateX(4px);
+  text-decoration: none;
+  color: var(--white);
+}
+
+.vc-placeholder {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.vc-info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--purple), var(--purple-dim));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.vc-icon-gold {
+  background: linear-gradient(135deg, #a07830, var(--gold));
+}
+
+.vc-info-text { flex: 1; min-width: 0; }
+
+/* Overrides .info-label for dark background */
+.vc-info-rows .info-label { color: var(--ink-light); }
+
+.vc-info-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vc-info-arrow {
+  color: rgba(255,255,255,0.25);
+  font-size: 0.75rem;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.vc-info-row:hover .vc-info-arrow {
+  color: var(--purple-dim);
+  transform: translateX(2px);
+}
+
+/* ── ACTION BUTTONS ── */
+.vc-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* Full-width primary button */
+.vc-btn-primary {
+  background: var(--purple);
+  color: var(--white) !important;
+  border: 1.5px solid var(--purple);
+  text-align: center;
+  grid-column: span 2;
+}
+
+.vc-btn-primary:hover {
+  background: var(--purple-dark);
+  box-shadow: 0 6px 20px rgba(107,38,200,0.4);
+  text-decoration: none;
+}
+
+/* Dark outline buttons */
+.vc-btn-dark {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.vc-btn-dark:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.25);
+  color: var(--white);
+}
+
+/* ── FOOTER NOTE ── */
+.vc-footer-text {
+  text-align: center;
+  margin-top: 1.6rem;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.06em;
+}
+
+.vc-footer-text span {
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+/* ── TOAST ── */
+.vc-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(107,38,200,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+.vc-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 400px) {
+  .vc-card-top  { padding: 1.8rem 1.5rem 3rem; }
+  .vc-card-body { padding: 0 1.5rem 1.75rem; }
+  .vc-card-name { font-size: 1.5rem; }
+  .vc-actions   { grid-template-columns: 1fr; }
+  .vc-btn-primary { grid-column: span 1; }
 }

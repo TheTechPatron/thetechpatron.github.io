@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zachary Boyer — The Tech Patron LLC</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="vc-body">
+
+  <div class="vc-wrapper">
+
+    <!-- Eyebrow -->
+    <div class="vc-eyebrow fade-up">
+      <div class="vc-eyebrow-line"></div>
+      <span class="vc-eyebrow-text">Virtual Business Card</span>
+      <div class="vc-eyebrow-line right"></div>
+    </div>
+
+    <!-- Card -->
+    <div class="vc-card fade-up">
+
+      <!-- Top band -->
+      <div class="vc-card-top">
+        <div class="vc-logo-badge">🛡️</div>
+        <div class="vc-card-name">Zachary Boyer</div>
+        <div class="vc-card-title">Founder of The Tech Patron LLC</div>
+        <div class="vc-gold-pill">The Tech Patron</div>
+      </div>
+
+      <!-- Body -->
+      <div class="vc-card-body">
+
+        <!-- Reuses existing .divider from style.css -->
+        <div class="divider" style="margin: 0 auto 1.8rem;"></div>
+
+        <!-- Contact rows -->
+        <div class="vc-info-rows">
+
+          <a class="vc-info-row" href="mailto:service@thetechpatron.com">
+            <div class="vc-info-icon">✉️</div>
+            <div class="vc-info-text">
+              <!-- Reuses existing .info-label and .info-value from style.css -->
+              <div class="info-label">Email</div>
+              <div class="vc-info-value">service@thetechpatron.com</div>
+            </div>
+            <div class="vc-info-arrow">›</div>
+          </a>
+
+          <a class="vc-info-row" href="tel:+12678085894">
+            <div class="vc-info-icon">📞</div>
+            <div class="vc-info-text">
+              <div class="info-label">Phone</div>
+              <div class="vc-info-value">(267) 808-5894</div>
+            </div>
+            <div class="vc-info-arrow">›</div>
+          </a>
+
+          <div class="vc-info-row vc-placeholder">
+            <div class="vc-info-icon vc-icon-gold">in</div>
+            <div class="vc-info-text">
+              <div class="info-label">LinkedIn</div>
+              <div class="vc-info-value">Coming soon</div>
+            </div>
+            <div class="vc-info-arrow">›</div>
+          </div>
+
+        </div>
+
+        <!-- Action buttons — reuses .btn base class from style.css -->
+        <div class="vc-actions">
+          <a class="btn vc-btn-primary" href="mailto:service@thetechpatron.com">
+            ✉️ &nbsp;Send an Email
+          </a>
+          <button class="btn vc-btn-dark" onclick="saveContact()">
+            💾 Save Contact
+          </button>
+          <button class="btn vc-btn-dark" onclick="copyLink()">
+            🔗 Copy Link
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <div class="vc-footer-text fade-up">
+      Powered by <span>The Tech Patron LLC</span> &nbsp;·&nbsp; thetechpatron.com
+    </div>
+
+  </div>
+
+  <!-- Toast notification -->
+  <div class="vc-toast" id="toast"></div>
+
+  <script>
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2400);
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => showToast('Link copied to clipboard!'))
+        .catch(() => showToast('Copy the URL from your browser.'));
+    }
+
+    function saveContact() {
+      const vcard =
+        "BEGIN:VCARD\n" +
+        "VERSION:3.0\n" +
+        "FN:Zachary Boyer\n" +
+        "ORG:The Tech Patron LLC\n" +
+        "TITLE:Founder\n" +
+        "EMAIL:service@thetechpatron.com\n" +
+        "TEL:+12678085894\n" +
+        "URL:https://thetechpatron.com\n" +
+        "END:VCARD";
+
+      const blob = new Blob([vcard], { type: 'text/vcard' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = 'zachary-boyer.vcf';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Contact saved!');
+    }
+  </script>
+
+</body>
+</html>
