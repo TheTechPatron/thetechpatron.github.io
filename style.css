@@ -234,6 +234,16 @@ nav ul li a.active {
   position: relative;
 }
 
+@media (max-width: 480px) {
+  .hero p {
+  font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
 .hero-ctas { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
 /* ── BUTTONS ───────────────────────────────────── */
