@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-/* ── VARIABLES ─────────────────────────────────── */
 :root {
   --purple:       #6B26C8;
   --purple-dark:  #4e1a96;
@@ -22,7 +21,6 @@
   --transition:   0.22s ease;
 }
 
-/* ── RESET ─────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
@@ -36,7 +34,6 @@ img { max-width: 100%; display: block; }
 a  { color: var(--purple); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--purple-dark); }
 
-/* ── HEADER ────────────────────────────────────── */
 header {
   position: sticky;
   top: 0;
@@ -56,7 +53,6 @@ header {
   justify-content: space-between;
 }
 
-/* Brand */
 .brand {
   display: flex;
   align-items: center;
@@ -113,7 +109,6 @@ header {
   text-transform: uppercase;
 }
 
-/* Nav */
 nav ul {
   list-style: none;
   display: flex;
@@ -136,7 +131,6 @@ nav ul li a.active {
   text-decoration: none;
 }
 
-/* Hamburger */
 .nav-toggle {
   display: none;
   background: none;
@@ -149,7 +143,6 @@ nav ul li a.active {
   line-height: 1;
 }
 
-/* ── PAGE HERO ─────────────────────────────────── */
 .page-hero {
   background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
   color: var(--white);
@@ -184,7 +177,6 @@ nav ul li a.active {
   position: relative;
 }
 
-/* ── HERO (home) ───────────────────────────────── */
 .hero {
   background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
   color: var(--white);
@@ -204,7 +196,6 @@ nav ul li a.active {
   pointer-events: none;
 }
 
-/*Increase size of font*/
 .hero-eyebrow {
   display: inline-block;
   font-size: 0.72rem;
@@ -246,7 +237,6 @@ nav ul li a.active {
 
 .hero-ctas { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
-/* ── BUTTONS ───────────────────────────────────── */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.8rem;
@@ -282,7 +272,6 @@ nav ul li a.active {
 }
 .btn-primary:hover { background: var(--purple-dark); border-color: var(--purple-dark); box-shadow: var(--shadow-md); }
 
-/* ── LAYOUT HELPERS ────────────────────────────── */
 .section { padding: 5rem 2rem; }
 .section-alt { background: var(--white); }
 
@@ -315,7 +304,6 @@ nav ul li a.active {
   margin-bottom: 3rem;
 }
 
-/* ── CARD GRID ─────────────────────────────────── */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -358,7 +346,6 @@ nav ul li a.active {
 
 .card p { font-size: 0.93rem; color: var(--ink-mid); }
 
-/* ── DIVIDER ───────────────────────────────────── */
 .divider {
   width: 56px;
   height: 3px;
@@ -367,7 +354,6 @@ nav ul li a.active {
   margin: 1rem 0 2rem;
 }
 
-/* ── CTA STRIP ─────────────────────────────────── */
 .cta-strip {
   background: linear-gradient(135deg, var(--purple), var(--purple-dark));
   color: var(--white);
@@ -383,7 +369,6 @@ nav ul li a.active {
 
 .cta-strip p { opacity: 0.82; margin-bottom: 2rem; }
 
-/* ── CONTENT WRAP (inner pages) ────────────────── */
 .content-wrap {
   max-width: 780px;
   margin: 0 auto;
@@ -427,7 +412,6 @@ nav ul li a.active {
   margin-bottom: 1.5rem;
 }
 
-/* ── CONTACT ───────────────────────────────────── */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -503,7 +487,6 @@ nav ul li a.active {
 
 .form-group textarea { min-height: 130px; resize: vertical; }
 
-/* ── FOOTER ────────────────────────────────────── */
 footer {
   background: var(--ink);
   color: rgba(255,255,255,0.55);
@@ -555,7 +538,6 @@ footer {
   font-size: 0.82rem;
 }
 
-/* ── ANIMATIONS ────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -566,7 +548,6 @@ footer {
 .fade-up:nth-child(3) { animation-delay: 0.2s; }
 .fade-up:nth-child(4) { animation-delay: 0.3s; }
 
-/* ── MISSION HIGHLIGHTS ────────────────────────── */
 .value-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
 
 .value-item {
@@ -580,7 +561,6 @@ footer {
 .value-item strong { display: block; color: var(--purple); margin-bottom: 0.25rem; font-size: 0.95rem; }
 .value-item span { font-size: 0.88rem; color: var(--ink-mid); }
 
-/* ── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 820px) {
   .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
@@ -619,7 +599,6 @@ footer {
     box-shadow: var(--shadow-md);
   }
 
-  /* THIS is the magic line — when checkbox is checked, show the nav */
   .nav-check:checked ~ nav { display: block; }
 
   nav ul { flex-direction: column; }
@@ -629,11 +608,7 @@ footer {
   .section { padding: 3.5rem 1.5rem; }
 }
 
-/* =====================================================
-   VIRTUAL BUSINESS CARD — add to bottom of style.css
-   ===================================================== */
 
-/* ── BODY OVERRIDE (dark centered layout) ── */
 .vc-body {
   background: var(--ink);
   color: var(--white);
@@ -659,7 +634,6 @@ footer {
   z-index: 0;
 }
 
-/* ── WRAPPER ── */
 .vc-wrapper {
   position: relative;
   z-index: 1;
@@ -667,7 +641,6 @@ footer {
   max-width: 480px;
 }
 
-/* ── EYEBROW ── */
 .vc-eyebrow {
   display: flex;
   align-items: center;
@@ -694,7 +667,6 @@ footer {
   color: var(--gold);
 }
 
-/* ── CARD ── */
 .vc-card {
   background: linear-gradient(160deg, #1a1530 0%, rgba(18,16,32,0) 100%),
               rgba(255,255,255,0.03);
@@ -704,7 +676,6 @@ footer {
   overflow: hidden;
 }
 
-/* ── CARD TOP BAND ── */
 .vc-card-top {
   background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
   padding: 2.2rem 2rem 3.5rem;
@@ -723,7 +694,6 @@ footer {
   pointer-events: none;
 }
 
-/* ── LOGO BADGE ── */
 .vc-logo-badge {
   width: 72px;
   height: 72px;
@@ -746,7 +716,6 @@ footer {
   border: 1px solid rgba(201,168,76,0.3);
 }
 
-/* ── NAME & TITLE ── */
 .vc-card-name {
   font-family: var(--font-display);
   font-size: 1.75rem;
@@ -780,13 +749,11 @@ footer {
   position: relative;
 }
 
-/* ── CARD BODY ── */
 .vc-card-body {
   padding: 0 2rem 2rem;
   margin-top: -1.4rem;
 }
 
-/* ── CONTACT ROWS ── */
 .vc-info-rows {
   display: flex;
   flex-direction: column;
@@ -842,7 +809,6 @@ footer {
 
 .vc-info-text { flex: 1; min-width: 0; }
 
-/* Overrides .info-label for dark background */
 .vc-info-rows .info-label { color: var(--ink-light); }
 
 .vc-info-value {
@@ -865,14 +831,12 @@ footer {
   transform: translateX(2px);
 }
 
-/* ── ACTION BUTTONS ── */
 .vc-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
 }
 
-/* Full-width primary button */
 .vc-btn-primary {
   background: var(--purple);
   color: var(--white) !important;
@@ -887,7 +851,6 @@ footer {
   text-decoration: none;
 }
 
-/* Dark outline buttons */
 .vc-btn-dark {
   background: transparent;
   color: rgba(255,255,255,0.7);
@@ -902,7 +865,6 @@ footer {
   color: var(--white);
 }
 
-/* ── FOOTER NOTE ── */
 .vc-footer-text {
   text-align: center;
   margin-top: 1.6rem;
@@ -916,7 +878,6 @@ footer {
   opacity: 0.6;
 }
 
-/* ── TOAST ── */
 .vc-toast {
   position: fixed;
   bottom: 2rem;
@@ -940,7 +901,6 @@ footer {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 400px) {
   .vc-card-top  { padding: 1.8rem 1.5rem 3rem; }
   .vc-card-body { padding: 0 1.5rem 1.75rem; }
